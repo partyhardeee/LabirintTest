@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LabirintSiteTest {
+public class LabyrinthSiteTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static MainPage mainPage;
