@@ -17,11 +17,11 @@ public class LabyrinthSiteTest {
     public static void setup() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
-        mainPage = new MainPage(driver);
-        searchPage = new SearchPage(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        mainPage = new MainPage(driver, wait);
+        searchPage = new SearchPage(driver, wait);
         driver.manage().window().maximize();
         driver.get("https://www.labirint.ru/");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//span[@class='b-header-b-logo-e-logo']")));
     }
 

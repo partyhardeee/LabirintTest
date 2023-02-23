@@ -3,17 +3,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class MainPage {
     public WebDriver driver;
-    public static WebDriverWait wait;
+    public WebDriverWait wait;
 
-    public MainPage(WebDriver driver) {
+    public MainPage(WebDriver driver, WebDriverWait wait) {
 
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = wait;
+
     }
 
     @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/books/']")

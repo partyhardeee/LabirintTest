@@ -2,17 +2,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
-public class SearchPage {
-    public WebDriver driver;
-    public static WebDriverWait wait;
+public class SearchPage extends MainPage {
 
-    public SearchPage(WebDriver driver) {
-
+    public SearchPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
         PageFactory.initElements(driver, this);
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @FindBy(xpath = "//input[@placeholder='Поиск по Лабиринту']")
@@ -20,7 +15,6 @@ public class SearchPage {
 
     @FindBy(xpath = "//div[@data-title]")
     private WebElement result;
-
 
 
     public String searchResult(String request) {
