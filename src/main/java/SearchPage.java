@@ -19,7 +19,6 @@ public class SearchPage extends MainPage {
 
     public String searchResult(String request) {
         input.sendKeys(request, Keys.ENTER);
-        String requestResult = result.getText();
-        return requestResult;
+        return result.getText();
     }
 }
