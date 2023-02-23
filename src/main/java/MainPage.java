@@ -1,11 +1,6 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -30,7 +25,7 @@ public class MainPage {
     @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/best/']")
     private WebElement best;
 
-    @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/best/']")
+    @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/school/']")
     private WebElement school;
 
     @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/office/']")
@@ -39,11 +34,35 @@ public class MainPage {
     @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/games/']")
     private WebElement games;
 
-    @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/household/']")
-    private WebElement household;
 
-    public String booksLink(){
+    public String booksLink() {
         books.click();
         return driver.getCurrentUrl();
     }
+
+    public String foreignBooksLink() {
+        foreignBooks.click();
+        return driver.getCurrentUrl();
+    }
+
+    public String bestBooksLink() {
+        best.click();
+        return driver.getCurrentUrl();
+    }
+
+    public String schoolBooksLink() {
+        school.click();
+        return driver.getCurrentUrl();
+    }
+
+    public String officeBooksLink() {
+        office.click();
+        return driver.getCurrentUrl();
+    }
+
+    public String gamesBooksLink() {
+        games.click();
+        return driver.getCurrentUrl();
+    }
+
 }
