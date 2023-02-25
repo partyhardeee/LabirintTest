@@ -16,9 +16,17 @@ public class SearchPage extends MainPage {
     @FindBy(xpath = "//div[@data-title]")
     private WebElement result;
 
+    @FindBy(xpath = "//div[@class='product-buy-margin']//a")
+    private WebElement addToCart;
+
 
     public String searchResult(String request) {
         input.sendKeys(request, Keys.ENTER);
         return result.getText();
+    }
+
+    public void addBookToCart(String request) {
+        input.sendKeys(request, Keys.ENTER);
+        addToCart.click();
     }
 }

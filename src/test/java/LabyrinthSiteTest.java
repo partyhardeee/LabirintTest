@@ -11,6 +11,7 @@ public class LabyrinthSiteTest {
     public static WebDriverWait wait;
     public static MainPage mainPage;
     public static SearchPage searchPage;
+    public static CartPage cartPage;
 
 
     @BeforeAll
@@ -20,6 +21,7 @@ public class LabyrinthSiteTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         mainPage = new MainPage(driver, wait);
         searchPage = new SearchPage(driver, wait);
+        cartPage = new CartPage(driver, wait);
         driver.manage().window().maximize();
         driver.get("https://www.labirint.ru/");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//span[@class='b-header-b-logo-e-logo']")));
@@ -53,13 +55,39 @@ public class LabyrinthSiteTest {
     @Test
     public void moveToGamesBooks() {
         Assertions.assertTrue(mainPage.gamesBooksLink().contains("https://www.labirint.ru/games/"));
-        toMain();
     }
+
     @Test
-    public void searchTest(){
+    public void searchTest() {
         Assertions.assertTrue(searchPage.searchResult("Остров сокровищ").contains("Остров сокровищ"));
     }
 
+    @Test
+    public void checkCartPrice() {
+        searchPage.addBookToCart("Остров сокровищ");
+        cartPage.toCart();
+        Assertions.assertEquals(cartPage.getBookPrice(), cartPage.getTotalPrice());
+        cartPage.clearCart();
+    }
+
+    @Test
+    public void deleteCart() {
+        searchPage.addBookToCart("Остров сокровищ");
+        cartPage.toCart();
+        Assertions.assertTrue(cartPage.clearCart());
+    }
+
+    @Test
+    public void checkRestore() {
+        searchPage.addBookToCart("Остров сокровищ");
+        cartPage.toCart();
+        cartPage.clearCart();
+        cartPage.restoreBooks();
+        Assertions.assertTrue(cartPage.getBooks().contains("Остров Сокровищ"));
+        cartPage.clearCart();
+    }
+
+    @AfterEach
     public void toMain() {
         driver.findElement(By.xpath("//div//a//span[@class='b-header-b-logo-e-logo']")).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//span[@class='b-header-b-logo-e-logo']")));
