@@ -31,6 +31,12 @@ public class CartPage extends MainPage {
     @FindBy(xpath = "//div[@data-title='Заказ']//span[@class='product-title']")
     private WebElement booksInCart;
 
+    @FindBy(xpath = "//span[@class='product-title']")
+    private WebElement putOrderedBooks;
+
+    @FindBy(xpath = "//a[@data-tooltip_title='Убрать']//span[@class='header-sprite']")
+    private WebElement removeFromPutOrder;
+
     public void toCart() {
         toCartButton.click();
     }
@@ -54,6 +60,15 @@ public class CartPage extends MainPage {
 
     public String getBooks() {
         return booksInCart.getText();
+    }
+
+    public boolean isBookPutOrdered(){
+        return putOrderedBooks.isDisplayed();
+    }
+
+    public void removeBookFromPutOrder(){
+        removeFromPutOrder.click();
+        driver.navigate().refresh();
     }
 
 

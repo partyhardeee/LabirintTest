@@ -87,6 +87,15 @@ public class LabyrinthSiteTest {
         cartPage.clearCart();
     }
 
+    @Test
+    public void checkPutOrder() {
+        searchPage.searchResult("Война и мир");
+        searchPage.putOrderBook();
+        searchPage.toPutOrder();
+        Assertions.assertTrue(cartPage.isBookPutOrdered());
+        cartPage.removeBookFromPutOrder();
+    }
+
     @AfterEach
     public void toMain() {
         driver.findElement(By.xpath("//div//a//span[@class='b-header-b-logo-e-logo']")).click();

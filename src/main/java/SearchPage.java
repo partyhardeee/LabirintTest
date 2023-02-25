@@ -19,6 +19,12 @@ public class SearchPage extends MainPage {
     @FindBy(xpath = "//div[@class='product-buy-margin']//a")
     private WebElement addToCart;
 
+    @FindBy(xpath = "//div[@data-position='1']//a[@data-tooltip_title='Отложить']//span[@class='header-sprite']")
+    private WebElement putOrderButton;
+
+    @FindBy(xpath = "//span[text()='Отложено']")
+    private WebElement toPutOrder;
+
 
     public String searchResult(String request) {
         input.sendKeys(request, Keys.ENTER);
@@ -28,5 +34,13 @@ public class SearchPage extends MainPage {
     public void addBookToCart(String request) {
         input.sendKeys(request, Keys.ENTER);
         addToCart.click();
+    }
+
+    public void putOrderBook(){
+        putOrderButton.click();
+    }
+
+    public void toPutOrder(){
+        toPutOrder.click();
     }
 }
