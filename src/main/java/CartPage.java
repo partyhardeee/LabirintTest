@@ -1,17 +1,17 @@
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.*;
+
 public class CartPage extends MainPage {
     public CartPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(xpath = "//li/a[@href='/cart/']")
-    private WebElement toCartButton;
 
     @FindBy(xpath = "//span[@class='price-val']/span")
     private WebElement bookPrice;
@@ -31,15 +31,10 @@ public class CartPage extends MainPage {
     @FindBy(xpath = "//div[@data-title='Заказ']//span[@class='product-title']")
     private WebElement booksInCart;
 
-    @FindBy(xpath = "//span[@class='product-title']")
-    private WebElement putOrderedBooks;
+
 
     @FindBy(xpath = "//a[@data-tooltip_title='Убрать']//span[@class='header-sprite']")
     private WebElement removeFromPutOrder;
-
-    public void toCart() {
-        toCartButton.click();
-    }
 
     public String getBookPrice() {
         return bookPrice.getText().replaceAll(" ", "");
@@ -49,24 +44,34 @@ public class CartPage extends MainPage {
         return totalPrice.getText().replaceAll(" ", "");
     }
 
-    public boolean clearCart() {
+    public Map<String, String> getBothPrices() {
+        Map<String, String> bothPrices = new HashMap<>();
+        bothPrices.put("bookPrice", getBookPrice());
+        bothPrices.put("totalPrice", getTotalPrice());
+        return bothPrices;
+    }
+
+    public CartPage clearCart() {
         clearCartButton.click();
+        return this;
+    }
+    public boolean isCartCleared() {
         return myCartField.isDisplayed();
     }
 
-    public void restoreBooks() {
+
+    public CartPage restoreBooks() {
         restoreBook.click();
+        return this;
     }
 
     public String getBooks() {
         return booksInCart.getText();
     }
 
-    public boolean isBookPutOrdered(){
-        return putOrderedBooks.isDisplayed();
-    }
 
-    public void removeBookFromPutOrder(){
+
+    public void removeBookFromPutOrder() {
         removeFromPutOrder.click();
         driver.navigate().refresh();
     }

@@ -24,23 +24,31 @@ public class SearchPage extends MainPage {
 
     @FindBy(xpath = "//span[text()='Отложено']")
     private WebElement toPutOrder;
+    @FindBy(xpath = "//span[@class='product-title']")
+    private WebElement putOrderedBooks;
 
 
-    public String searchResult(String request) {
-        input.sendKeys(request, Keys.ENTER);
+    public String getSearchResult() {
         return result.getText();
     }
 
-    public void addBookToCart(String request) {
-        input.sendKeys(request, Keys.ENTER);
+    public SearchPage addBookToCart() {
         addToCart.click();
+        return this;
     }
 
-    public void putOrderBook(){
+
+    public SearchPage putOrderBook() {
         putOrderButton.click();
+        return this;
     }
 
-    public void toPutOrder(){
+    public boolean isBookPutOrdered() {
+        return putOrderedBooks.isDisplayed();
+    }
+
+    public SearchPage toPutOrder() {
         toPutOrder.click();
+        return this;
     }
 }

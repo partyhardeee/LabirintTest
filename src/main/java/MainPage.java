@@ -33,6 +33,22 @@ public class MainPage {
     @FindBy(xpath = "//div[@class='b-header-b-menu-wrapper']//a[@href='/games/']")
     private WebElement games;
 
+    @FindBy(xpath = "//input[@placeholder='Поиск по Лабиринту']")
+    private WebElement input;
+    @FindBy(xpath = "//li/a[@href='/cart/']")
+    private WebElement toCartButton;
+
+    public SearchPage goToSearchPage(String request) {
+        input.sendKeys(request, Keys.ENTER);
+        return new SearchPage(driver, wait);
+    }
+
+    public CartPage goToCartPage() {
+        if(driver.getCurrentUrl() != ("https://www.labirint.ru/cart/")) {
+            toCartButton.click();
+        }
+        return new CartPage(driver, wait);
+    }
 
     public String booksLink() {
         books.click();
