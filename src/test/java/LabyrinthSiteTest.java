@@ -56,7 +56,7 @@ public class LabyrinthSiteTest {
         Assertions.assertTrue(new MainPage(driver, wait).gamesBooksLink().contains("https://www.labirint.ru/games/"));
     }
 
-   // @Test
+    @Test
     public void searchTest() {
         String searchResult = new MainPage(driver, wait)
                 .goToSearchPage("Остров сокровищ")
@@ -64,7 +64,7 @@ public class LabyrinthSiteTest {
         Assertions.assertTrue(searchResult.contains("Остров сокровищ"));
     }
 
-    //@Test
+    @Test
     public void checkCartPrice() {
         Map<String, String> getBothPrices = new MainPage(driver, wait)
                 .goToSearchPage("Остров сокровищ")
@@ -74,14 +74,14 @@ public class LabyrinthSiteTest {
         Assertions.assertEquals(getBothPrices.get("bookPrice"), getBothPrices.get("totalPrice"));
     }
 
-    //@Test
+    @Test
     public void deleteCart() {
         new MainPage(driver, wait).goToSearchPage("Остров сокровищ").addBookToCart();
         boolean isCartCleared = new MainPage(driver, wait).goToCartPage().clearCart().isCartCleared();
         Assertions.assertTrue(isCartCleared);
     }
 
-    //@Test
+    @Test
     public void checkRestore() {
         String restoredBooks = new MainPage(driver, wait).goToSearchPage("Остров сокровищ")
                 .addBookToCart()
@@ -92,7 +92,7 @@ public class LabyrinthSiteTest {
         Assertions.assertTrue(restoredBooks.contains("Остров Сокровищ"));
     }
 
-    //@Test
+    @Test
     public void checkPutOrder() {
         boolean isBookPuOrdered =
                 new MainPage(driver, wait)
