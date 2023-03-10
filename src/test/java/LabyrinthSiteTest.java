@@ -3,8 +3,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import java.time.Duration;
 import java.util.Map;
 
@@ -14,7 +12,7 @@ public class LabyrinthSiteTest {
 
     @BeforeAll
     public static void prop() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
     }
 
     @BeforeEach
