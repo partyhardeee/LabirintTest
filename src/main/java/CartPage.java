@@ -32,7 +32,6 @@ public class CartPage extends MainPage {
     private WebElement booksInCart;
 
 
-
     @FindBy(xpath = "//a[@data-tooltip_title='Убрать']//span[@class='header-sprite']")
     private WebElement removeFromPutOrder;
 
@@ -55,6 +54,7 @@ public class CartPage extends MainPage {
         clearCartButton.click();
         return this;
     }
+
     public boolean isCartCleared() {
         return myCartField.isDisplayed();
     }
@@ -68,7 +68,6 @@ public class CartPage extends MainPage {
     public String getBooks() {
         return booksInCart.getText();
     }
-
 
 
     public void removeBookFromPutOrder() {
