@@ -11,7 +11,6 @@ import java.util.Map;
 public class LabyrinthSiteTest {
     public WebDriver driver;
     public WebDriverWait wait;
-    public static String URL;
 
     @BeforeAll
     public static void prop() {
