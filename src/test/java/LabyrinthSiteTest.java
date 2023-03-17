@@ -4,58 +4,60 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.Map;
 
 public class LabyrinthSiteTest {
     public WebDriver driver;
     public WebDriverWait wait;
+    public static String URL;
 
     @BeforeAll
     public static void prop() {
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
-
     }
 
     @BeforeEach
     public void setup() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+        chromeOptions.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get("https://www.labirint.ru/");
+        driver.get(ConfProperties.getProperty("url"));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//span[@class='b-header-b-logo-e-logo']")));
     }
 
     @Test
     public void moveToBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains("https://www.labirint.ru/books/"));
+        System.out.println(ConfProperties.getProperty("login"));
+        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(ConfProperties.getProperty("url") + "/books/"));
     }
 
     @Test
     public void moveToForeignBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).foreignBooksLink().contains("https://www.labirint.ru/foreignbooks/"));
+        Assertions.assertTrue(new MainPage(driver, wait).foreignBooksLink().contains(ConfProperties.getProperty("url") + "/foreignbooks/"));
     }
 
     @Test
     public void moveToBestBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).bestBooksLink().contains("https://www.labirint.ru/best/"));
+        Assertions.assertTrue(new MainPage(driver, wait).bestBooksLink().contains(ConfProperties.getProperty("url") + "/best/"));
     }
 
     @Test
     public void moveToOfficeBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).officeBooksLink().contains("https://www.labirint.ru/office/"));
+        Assertions.assertTrue(new MainPage(driver, wait).officeBooksLink().contains(ConfProperties.getProperty("url") + "/office/"));
     }
 
     @Test
     public void moveToSchoolBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).schoolBooksLink().contains("https://www.labirint.ru/school/"));
+        Assertions.assertTrue(new MainPage(driver, wait).schoolBooksLink().contains(ConfProperties.getProperty("url") + "/school/"));
     }
 
     @Test
     public void moveToGamesBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).gamesBooksLink().contains("https://www.labirint.ru/games/"));
+        Assertions.assertTrue(new MainPage(driver, wait).gamesBooksLink().contains(ConfProperties.getProperty("url") + "/games/"));
     }
 
     @Test
