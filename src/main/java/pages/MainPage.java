@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
@@ -46,7 +47,7 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/club/']/parent::span")
     private WebElement club;
 
-    @FindBy(xpath = "//ul[@class='b-sub-menu-e-list']//a[@href='/top/skoro-v-prodazhe/']")
+    @FindBy(xpath = "//div[@class='b-club-content']//a[@href='/top/skoro-v-prodazhe/']")
     private WebElement toPreorderButton;
 
 
@@ -95,8 +96,7 @@ public class MainPage {
 
     @Step("Переход на страницу предзаказов")
     public PreOrderPage toPreorderBooks(){
-        Actions actions = new Actions(driver);
-        actions.moveToElement(club);
+        club.click();
         toPreorderButton.click();
         return new PreOrderPage(driver, wait);
     }
