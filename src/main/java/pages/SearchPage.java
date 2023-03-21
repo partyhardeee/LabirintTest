@@ -1,3 +1,6 @@
+package pages;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -32,21 +35,23 @@ public class SearchPage extends MainPage {
         return result.getText();
     }
 
+    @Step("Добавление книги в корзину")
     public SearchPage addBookToCart() {
         addToCart.click();
         return this;
     }
 
-
+    @Step("Отложить книгу")
     public SearchPage putOrderBook() {
         putOrderButton.click();
         return this;
     }
-
+    @Step("Проверка отложена ли книга")
     public boolean isBookPutOrdered() {
         return putOrderedBooks.isDisplayed();
     }
 
+    @Step("Переход к отложенным книгам")
     public SearchPage toPutOrder() {
         toPutOrder.click();
         return this;

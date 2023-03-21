@@ -1,3 +1,6 @@
+package pages;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +37,7 @@ public class CartPage extends MainPage {
     @FindBy(xpath = "//a[@data-tooltip_title='Убрать']//span[@class='header-sprite']")
     private WebElement removeFromPutOrder;
 
+
     public String getBookPrice() {
         return bookPrice.getText().replaceAll(" ", "");
     }
@@ -49,6 +53,7 @@ public class CartPage extends MainPage {
         return bothPrices;
     }
 
+    @Step("Очистка корзины")
     public CartPage clearCart() {
         clearCartButton.click();
         return this;
@@ -58,7 +63,7 @@ public class CartPage extends MainPage {
         return myCartField.isDisplayed();
     }
 
-
+    @Step("Восстановить корзину")
     public CartPage restoreBooks() {
         restoreBook.click();
         return this;
