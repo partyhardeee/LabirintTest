@@ -54,38 +54,45 @@ public class MainPage {
         input.sendKeys(request, Keys.ENTER);
         return new SearchPage(driver, wait);
     }
+
     @Step("Переход в корзину")
     public CartPage goToCartPage() {
-        if(driver.getCurrentUrl() != ("https://www.labirint.ru/cart/")) {
+        if (driver.getCurrentUrl() != ("https://www.labirint.ru/cart/")) {
             toCartButton.click();
         }
         return new CartPage(driver, wait);
     }
+
     @Step("Переход на страницу Книги")
     public String booksLink() {
         books.click();
         return driver.getCurrentUrl();
     }
+
     @Step("Переход на страницу Иностранные книги")
     public String foreignBooksLink() {
         foreignBooks.click();
         return driver.getCurrentUrl();
     }
+
     @Step("Переход на страницу Лучшие книги")
     public String bestBooksLink() {
         best.click();
         return driver.getCurrentUrl();
     }
+
     @Step("Переход на страницу Школьные книги")
     public String schoolBooksLink() {
         school.click();
         return driver.getCurrentUrl();
     }
+
     @Step("Переход на страницу Книги для офиса")
     public String officeBooksLink() {
         office.click();
         return driver.getCurrentUrl();
     }
+
     @Step("Переход на страницу Игры")
     public String gamesBooksLink() {
         games.click();
@@ -93,7 +100,7 @@ public class MainPage {
     }
 
     @Step("Переход на страницу предзаказов")
-    public PreOrderPage toPreorderBooks(){
+    public PreOrderPage toPreorderBooks() {
         club.click();
         toPreorderButton.click();
         return new PreOrderPage(driver, wait);

@@ -34,9 +34,13 @@ public class SearchPage extends MainPage {
     @FindBy(xpath = "//div[@data-position='1']//div[@class='product-author']")
     private WebElement author;
 
+    @FindBy(xpath = "//div[@class='search-error bestsellers']/h1")
+    private WebElement searchError;
+
     public String getSearchResult() {
         return result.getText();
     }
+
 
     @Step("Добавление книги в корзину")
     public SearchPage addBookToCart() {
@@ -66,5 +70,8 @@ public class SearchPage extends MainPage {
         return this;
     }
 
-
+    @Step("Отображение текста, если нет результатов")
+    public boolean isErrorDisplayed() {
+        return searchError.isDisplayed();
+    }
 }

@@ -106,6 +106,16 @@ public class LabyrinthSite extends BaseClass {
     }
 
     @Epic(value = "Поиск")
+    @Story(value = "Проверка неудачного поиска")
+    @Test
+    public void wrongSearch() {
+        boolean isSearchWrong = new MainPage(driver, wait)
+                .goToSearchPage("123123123123")
+                .isErrorDisplayed();
+        Assertions.assertTrue(isSearchWrong);
+    }
+
+    @Epic(value = "Поиск")
     @Story(value = "Кнопка 'Отложить книгу'")
     @Test
     public void checkPutOrder() {
