@@ -7,15 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PreOrderPage {
-    public WebDriver driver;
-    public WebDriverWait wait;
+public class PreOrderPage extends MainPage {
 
     public PreOrderPage(WebDriver driver, WebDriverWait wait) {
-
+        super(driver, wait);
         PageFactory.initElements(driver, this);
-        this.driver = driver;
-        this.wait = wait;
 
     }
 

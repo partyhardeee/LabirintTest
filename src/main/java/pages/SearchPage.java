@@ -27,9 +27,12 @@ public class SearchPage extends MainPage {
 
     @FindBy(xpath = "//span[text()='Отложено']")
     private WebElement toPutOrder;
+
     @FindBy(xpath = "//span[@class='product-title']")
     private WebElement putOrderedBooks;
 
+    @FindBy(xpath = "//div[@data-position='1']//div[@class='product-author']")
+    private WebElement author;
 
     public String getSearchResult() {
         return result.getText();
@@ -46,9 +49,15 @@ public class SearchPage extends MainPage {
         putOrderButton.click();
         return this;
     }
+
     @Step("Проверка отложена ли книга")
     public boolean isBookPutOrdered() {
         return putOrderedBooks.isDisplayed();
+    }
+
+    @Step("Автор книги")
+    public String getAuthor() {
+        return author.getText();
     }
 
     @Step("Переход к отложенным книгам")
@@ -56,4 +65,6 @@ public class SearchPage extends MainPage {
         toPutOrder.click();
         return this;
     }
+
+
 }

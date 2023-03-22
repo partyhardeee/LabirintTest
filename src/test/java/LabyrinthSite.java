@@ -60,6 +60,17 @@ public class LabyrinthSite extends BaseClass {
         Assertions.assertTrue(searchResult.contains("Остров сокровищ"));
     }
 
+    @Epic(value = "Поиск")
+    @Story(value = "Поиск по автору")
+    @Test
+    public void searchAuthor() {
+        String request = "Роулинг Джоан Кэтлин";
+        String searchResult = new MainPage(driver, wait)
+                .goToSearchPage(request)
+                .getAuthor();
+        Assertions.assertTrue(searchResult.contains(request));
+    }
+
     @Epic(value = "Корзина")
     @Story(value = "Проверка цены в корзине")
     @Test
