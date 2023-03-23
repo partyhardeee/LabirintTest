@@ -3,6 +3,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import pages.MainPage;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -82,6 +83,30 @@ public class LabyrinthSite extends BaseClass {
                 .getBothPrices();
         Assertions.assertEquals(getBothPrices.get("bookPrice"), getBothPrices.get("totalPrice"));
     }
+
+
+    @Epic(value = "Сортировка")
+    @Story(value = "Проверка сортировки - Сначала дешевые")
+    @Test
+    public void sortByCheap() throws InterruptedException {
+        Map<String, String> getBothPrices = new MainPage(driver, wait)
+                .goToSearchPage("Стивен Кинг")
+                        .sortByPriceUp()
+                                .getPriceOfSorted();
+        Assertions.assertTrue(Integer.parseInt(getBothPrices.get("firstBookPrice")) <= Integer.parseInt(getBothPrices.get("secBookPrice")));
+    }
+
+    @Epic(value = "Сортировка")
+    @Story(value = "Проверка сортировки - Сначала дорогие")
+    @Test
+    public void sortByExpensive() throws InterruptedException {
+        Map<String, String> getBothPrices = new MainPage(driver, wait)
+                .goToSearchPage("Джек Лондон")
+                .sortByPriceDown()
+                .getPriceOfSorted();
+        Assertions.assertTrue(Integer.parseInt(getBothPrices.get("secBookPrice")) <= Integer.parseInt(getBothPrices.get("firstBookPrice")));
+    }
+
 
     @Epic(value = "Поиск")
     @Story(value = "Проверка очистки корзины")

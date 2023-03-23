@@ -22,7 +22,7 @@ public class BaseClass {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.get(ConfClass.getProperty("url"));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//body//span[@class='b-header-b-logo-e-logo']")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Поиск по Лабиринту']")));
     }
 
     @AfterEach
