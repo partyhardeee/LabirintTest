@@ -94,6 +94,7 @@ public class SearchPage extends MainPage {
         return searchError.isDisplayed();
     }
 
+
     @Step("Сортировка по цене по возрастанию")
     public SearchPage sortByPriceUp() {
         sortingButton.click();
@@ -119,7 +120,7 @@ public class SearchPage extends MainPage {
     @Step("Получение цены певрого и второго элемента")
     public Map<String, String> getPriceOfSorted() throws InterruptedException {
         Map<String, String> pricesOfSorted = new HashMap<>();
-        Thread.sleep(3000);
+        Thread.sleep(3500);
         pricesOfSorted.put("firstBookPrice", firstBookPrice());
         pricesOfSorted.put("secBookPrice", secTotalPrice());
         return pricesOfSorted;
