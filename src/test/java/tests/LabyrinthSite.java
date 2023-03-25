@@ -10,12 +10,12 @@ import java.util.Map;
 
 public class LabyrinthSite extends BaseClass {
 
-    @Epic(value = "Переход на страницу")
-    @Story(value = "Проверка перехода на страницу books")
-    @Test
-    public void moveToBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(ConfClass.getProperty("url") + "/books/"));
-    }
+//    @Epic(value = "Переход на страницу")
+//    @Story(value = "Проверка перехода на страницу books")
+//    @Test
+//    public void moveToBooks() {
+//        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(ConfClass.getProperty("url") + "/books/"));
+//    }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу foreign books")

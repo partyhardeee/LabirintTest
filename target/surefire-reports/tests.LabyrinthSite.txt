@@ -1,30 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: tests.LabyrinthSite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 472.895 s <<< FAILURE! - in tests.LabyrinthSite
-tests.LabyrinthSite.sortByExpensive  Time elapsed: 46.945 s  <<< ERROR!
+Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 461.392 s <<< FAILURE! - in tests.LabyrinthSite
+tests.LabyrinthSite.sortByExpensive  Time elapsed: 45.875 s  <<< ERROR!
 org.openqa.selenium.ElementClickInterceptedException: 
 element click intercepted: Element <a class="item-link item-inner js-navisort-analytics" data-event-type="234" data-event-content="дорогие" href="?stype=0&amp;order=price&amp;way=back">...</a> is not clickable at point (852, 573). Other element would receive the click: <button class="cookie-policy__button js-cookie-policy-agree">...</button>
   (Session info: chrome=111.0.5563.111)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3d19f0edbac6885c4cb47e59ed9c27b3, clickElement {id=1da7b170-0e98-4ac4-a3bc-b4c6ea870268}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53036}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53036/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (3d19f0edbac6885c4cb47e59ed9c27b3)] -> xpath: //span[@class='navisort-part navisort-sortings navisort-part-7 fright']//a[@data-event-content='дорогие']]
-Session ID: 3d19f0edbac6885c4cb47e59ed9c27b3
+Command: [42a1e3f72b1e63360398125a98a63cb4, clickElement {id=1f093e77-9593-4de7-ae16-7a1dd82a6cc3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:55384}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55384/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (42a1e3f72b1e63360398125a98a63cb4)] -> xpath: //span[@class='navisort-part navisort-sortings navisort-part-7 fright']//a[@data-event-content='дорогие']]
+Session ID: 42a1e3f72b1e63360398125a98a63cb4
 	at tests.LabyrinthSite.sortByExpensive(LabyrinthSite.java:85)
 
-tests.LabyrinthSite.moveToOfficeBooks  Time elapsed: 42.985 s  <<< ERROR!
+tests.LabyrinthSite.moveToOfficeBooks  Time elapsed: 42.239 s  <<< ERROR!
 org.openqa.selenium.ElementNotInteractableException: 
 element not interactable
   (Session info: chrome=111.0.5563.111)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [73f9b69735d1e47ca2105d48a1fbd084, clickElement {id=714b5047-a587-4725-8b14-8fd886bf98c0}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:53386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53386/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (73f9b69735d1e47ca2105d48a1fbd084)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/office/']]
-Session ID: 73f9b69735d1e47ca2105d48a1fbd084
+Command: [50c6cdc27a06793783507716e0c45ad4, clickElement {id=fac5771d-5d96-4b6e-b2a4-e019b0875ec0}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:55734}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55734/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (50c6cdc27a06793783507716e0c45ad4)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/office/']]
+Session ID: 50c6cdc27a06793783507716e0c45ad4
 	at tests.LabyrinthSite.moveToOfficeBooks(LabyrinthSite.java:38)
 
