@@ -1,30 +1,43 @@
 -------------------------------------------------------------------------------
 Test set: tests.SearchTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 294.93 s <<< FAILURE! - in tests.SearchTest
-tests.LabyrinthSite.moveToSchoolBooks  Time elapsed: 43.154 s  <<< ERROR!
+Tests run: 12, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 290.586 s <<< FAILURE! - in tests.SearchTest
+tests.LabyrinthSite.moveToSchoolBooks  Time elapsed: 42.514 s  <<< ERROR!
 org.openqa.selenium.ElementNotInteractableException: 
 element not interactable
   (Session info: chrome=111.0.5563.111)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e1bcd5ff5ac81f27f06f933cd60945c4, clickElement {id=76dd38a0-4dba-42a1-b00c-2846f9585896}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:54305}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54305/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (e1bcd5ff5ac81f27f06f933cd60945c4)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/school/']]
-Session ID: e1bcd5ff5ac81f27f06f933cd60945c4
+Command: [8cc218f5679fc8a442adee7ac2c0a6c0, clickElement {id=56da9135-9746-4fd9-8a8c-33a592a96863}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:60455}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60455/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (8cc218f5679fc8a442adee7ac2c0a6c0)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/school/']]
+Session ID: 8cc218f5679fc8a442adee7ac2c0a6c0
 	at tests.LabyrinthSite.moveToSchoolBooks(LabyrinthSite.java:45)
 
-tests.LabyrinthSite.moveToGamesBooks  Time elapsed: 43.528 s  <<< ERROR!
+tests.LabyrinthSite.moveToGamesBooks  Time elapsed: 43.384 s  <<< ERROR!
 org.openqa.selenium.ElementNotInteractableException: 
 element not interactable
   (Session info: chrome=111.0.5563.111)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a9159a6e5bdfc7851cc91927480e9867, clickElement {id=244c3fe8-69cf-4442-b6fb-c58adc1b4b7c}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:54542}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54542/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (a9159a6e5bdfc7851cc91927480e9867)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/games/']]
-Session ID: a9159a6e5bdfc7851cc91927480e9867
+Command: [6f5b39c6def47c57aea2d0c7b1ad8688, clickElement {id=f5d20a28-4335-46bf-8d77-323469164fd8}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:60665}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60665/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (6f5b39c6def47c57aea2d0c7b1ad8688)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/games/']]
+Session ID: 6f5b39c6def47c57aea2d0c7b1ad8688
 	at tests.LabyrinthSite.moveToGamesBooks(LabyrinthSite.java:52)
+
+tests.LabyrinthSite.sortByExpensive  Time elapsed: 46.717 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <a class="item-link item-inner js-navisort-analytics" data-event-type="234" data-event-content="дорогие" href="?stype=0&amp;order=price&amp;way=back">...</a> is not clickable at point (852, 573). Other element would receive the click: <button class="cookie-policy__button js-cookie-policy-agree">...</button>
+  (Session info: chrome=111.0.5563.111)
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a5256c13e97477a693b64a3fb82f4f05, clickElement {id=3f1a861b-0a6d-49b6-ae1f-51e0af344eb2}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:61657}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61657/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (a5256c13e97477a693b64a3fb82f4f05)] -> xpath: //span[@class='navisort-part navisort-sortings navisort-part-7 fright']//a[@data-event-content='дорогие']]
+Session ID: a5256c13e97477a693b64a3fb82f4f05
+	at tests.LabyrinthSite.sortByExpensive(LabyrinthSite.java:85)
 

@@ -1,30 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: tests.LabyrinthSite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 461.392 s <<< FAILURE! - in tests.LabyrinthSite
-tests.LabyrinthSite.sortByExpensive  Time elapsed: 45.875 s  <<< ERROR!
-org.openqa.selenium.ElementClickInterceptedException: 
-element click intercepted: Element <a class="item-link item-inner js-navisort-analytics" data-event-type="234" data-event-content="дорогие" href="?stype=0&amp;order=price&amp;way=back">...</a> is not clickable at point (852, 573). Other element would receive the click: <button class="cookie-policy__button js-cookie-policy-agree">...</button>
-  (Session info: chrome=111.0.5563.111)
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [42a1e3f72b1e63360398125a98a63cb4, clickElement {id=1f093e77-9593-4de7-ae16-7a1dd82a6cc3}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:55384}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55384/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (42a1e3f72b1e63360398125a98a63cb4)] -> xpath: //span[@class='navisort-part navisort-sortings navisort-part-7 fright']//a[@data-event-content='дорогие']]
-Session ID: 42a1e3f72b1e63360398125a98a63cb4
-	at tests.LabyrinthSite.sortByExpensive(LabyrinthSite.java:85)
-
-tests.LabyrinthSite.moveToOfficeBooks  Time elapsed: 42.239 s  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 421.011 s <<< FAILURE! - in tests.LabyrinthSite
+tests.LabyrinthSite.moveToOfficeBooks  Time elapsed: 42.453 s  <<< ERROR!
 org.openqa.selenium.ElementNotInteractableException: 
 element not interactable
   (Session info: chrome=111.0.5563.111)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [50c6cdc27a06793783507716e0c45ad4, clickElement {id=fac5771d-5d96-4b6e-b2a4-e019b0875ec0}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:55734}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55734/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (50c6cdc27a06793783507716e0c45ad4)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/office/']]
-Session ID: 50c6cdc27a06793783507716e0c45ad4
+Command: [013a361f6cc38a9efdc85a55696a69ab, clickElement {id=755527ca-5d90-4fda-a2d9-12f036d70e7a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:62164}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62164/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (013a361f6cc38a9efdc85a55696a69ab)] -> xpath: //div[@class='b-header-b-menu-wrapper']//a[@href='/office/']]
+Session ID: 013a361f6cc38a9efdc85a55696a69ab
 	at tests.LabyrinthSite.moveToOfficeBooks(LabyrinthSite.java:38)
+
+tests.LabyrinthSite.checkCartPrice  Time elapsed: 46.029 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='price-val']/span"}
+  (Session info: chrome=111.0.5563.111)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-H1SPN5Q', ip: '26.151.6.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c48bfee83d53f5afcdf01b72463dc095, findElement {using=xpath, value=//span[@class='price-val']/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:62323}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62323/devtoo..., se:cdpVersion: 111.0.5563.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c48bfee83d53f5afcdf01b72463dc095
+	at tests.LabyrinthSite.checkCartPrice(LabyrinthSite.java:63)
 
