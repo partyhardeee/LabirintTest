@@ -93,7 +93,10 @@ public class MainPage {
         try {
             school.click();
         } catch (ElementNotInteractableException e) {
+
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            wait.until(ExpectedConditions.elementToBeClickable(school));
+            actions.moveToElement(school);
             school.click();
         }
 
@@ -107,6 +110,8 @@ public class MainPage {
             office.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            wait.until(ExpectedConditions.elementToBeClickable(office));
+            actions.moveToElement(office);
             office.click();
         }
         return driver.getCurrentUrl();
@@ -119,6 +124,8 @@ public class MainPage {
             games.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            wait.until(ExpectedConditions.elementToBeClickable(games));
+            actions.moveToElement(games);
             games.click();
         }
         return driver.getCurrentUrl();
