@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
@@ -65,42 +66,49 @@ public class MainPage {
 
     @Step("Переход на страницу Книги")
     public String booksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(books));
         books.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Иностранные книги")
     public String foreignBooksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(foreignBooks));
         foreignBooks.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Лучшие книги")
     public String bestBooksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(best));
         best.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Школьные книги")
     public String schoolBooksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(school));
         school.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Книги для офиса")
     public String officeBooksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(office));
         office.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Игры")
     public String gamesBooksLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(games));
         games.click();
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу предзаказов")
     public PreOrderPage toPreorderBooks() {
+        wait.until(ExpectedConditions.elementToBeClickable(club));
         club.click();
         toPreorderButton.click();
         return new PreOrderPage(driver, wait);
