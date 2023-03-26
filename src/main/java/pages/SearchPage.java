@@ -98,6 +98,7 @@ public class SearchPage extends MainPage {
     @Step("Сортировка по цене по возрастанию")
     public SearchPage sortByPriceUp() {
         sortingButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(sortByCheapButton));
         sortByCheapButton.click();
         return this;
     }
@@ -105,6 +106,7 @@ public class SearchPage extends MainPage {
     @Step("Сортировка по цене по возрастанию")
     public SearchPage sortByPriceDown() {
         sortingButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(sortByExpensiveButton));
         sortByExpensiveButton.click();
         return this;
     }
