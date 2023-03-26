@@ -2,6 +2,7 @@ package pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,6 +17,7 @@ public class MainPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
         this.wait = wait;
+
 
     }
 
@@ -87,22 +89,38 @@ public class MainPage {
 
     @Step("Переход на страницу Школьные книги")
     public String schoolBooksLink() {
-        wait.until(ExpectedConditions.elementToBeClickable(school));
-        school.click();
+        Actions actions = new Actions(driver);
+        try {
+            school.click();
+        } catch (ElementNotInteractableException e) {
+            actions.moveToElement(driver.findElement(By.xpath("By.xpath(\"//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']\")")));
+            school.click();
+        }
+
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Книги для офиса")
     public String officeBooksLink() {
-        wait.until(ExpectedConditions.elementToBeClickable(office));
-        office.click();
+        Actions actions = new Actions(driver);
+        try {
+            office.click();
+        } catch (ElementNotInteractableException e) {
+            actions.moveToElement(driver.findElement(By.xpath("By.xpath(\"//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']\")")));
+            office.click();
+        }
         return driver.getCurrentUrl();
     }
 
     @Step("Переход на страницу Игры")
     public String gamesBooksLink() {
-        wait.until(ExpectedConditions.elementToBeClickable(games));
-        games.click();
+        Actions actions = new Actions(driver);
+        try {
+            games.click();
+        } catch (ElementNotInteractableException e) {
+            actions.moveToElement(driver.findElement(By.xpath("By.xpath(\"//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']\")")));
+            games.click();
+        }
         return driver.getCurrentUrl();
     }
 
