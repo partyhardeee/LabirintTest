@@ -94,6 +94,7 @@ public class MainPage {
             school.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")).click();
             driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/school/']")).click();
         }
 
@@ -107,6 +108,7 @@ public class MainPage {
             office.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")).click();
             driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/office/']")).click();
         }
         return driver.getCurrentUrl();
@@ -119,6 +121,7 @@ public class MainPage {
             games.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
+            driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")).click();
             driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/games/']")).click();
         }
         return driver.getCurrentUrl();
