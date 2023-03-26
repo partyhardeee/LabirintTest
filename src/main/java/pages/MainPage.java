@@ -93,11 +93,8 @@ public class MainPage {
         try {
             school.click();
         } catch (ElementNotInteractableException e) {
-
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
-            wait.until(ExpectedConditions.elementToBeClickable(school));
-            actions.moveToElement(school);
-            school.click();
+            driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/school/']")).click();
         }
 
         return driver.getCurrentUrl();
@@ -110,9 +107,7 @@ public class MainPage {
             office.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
-            wait.until(ExpectedConditions.elementToBeClickable(office));
-            actions.moveToElement(office);
-            office.click();
+            driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/office/']")).click();
         }
         return driver.getCurrentUrl();
     }
@@ -124,9 +119,7 @@ public class MainPage {
             games.click();
         } catch (ElementNotInteractableException e) {
             actions.moveToElement(driver.findElement(By.xpath("//span[@class='b-header-b-menu-e-link top-link-main have-dropdown-touchlink']")));
-            wait.until(ExpectedConditions.elementToBeClickable(games));
-            actions.moveToElement(games);
-            games.click();
+            driver.findElement(By.xpath("//li[@class='b-menu-second-item second-item-hide']//a[@href='/games/']")).click();
         }
         return driver.getCurrentUrl();
     }
