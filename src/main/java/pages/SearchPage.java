@@ -105,9 +105,14 @@ public class SearchPage extends MainPage {
 
     @Step("Сортировка по цене по возрастанию")
     public SearchPage sortByPriceDown() {
-        sortingButton.click();
-        wait.until(ExpectedConditions.elementToBeClickable(sortByExpensiveButton));
-        sortByExpensiveButton.click();
+        try {
+            sortingButton.click();
+            sortByExpensiveButton.click();
+        } catch (ElementClickInterceptedException e) {
+            driver.findElement(By.xpath("//button[@class='cookie-policy__button js-cookie-policy-agree']")).click();
+            sortingButton.click();
+            sortByExpensiveButton.click();
+        }
         return this;
     }
 
