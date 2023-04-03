@@ -8,9 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
     protected WebDriver driver;
@@ -26,7 +24,7 @@ public class BaseClass {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get(ConfClass.getProperty("url"));
+        driver.get(System.getProperty("test.url"));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Поиск по Лабиринту']")));
     }
 

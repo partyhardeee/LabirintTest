@@ -14,42 +14,42 @@ public class LabyrinthSite extends BaseClass {
     @Story(value = "Проверка перехода на страницу books")
     @Test
     public void moveToBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(ConfClass.getProperty("url") + "/books/"));
+        Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(System.getProperty("test.url") + "/books/"));
     }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу foreign books")
     @Test
     public void moveToForeignBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).foreignBooksLink().contains(ConfClass.getProperty("url") + "/foreignbooks/"));
+        Assertions.assertTrue(new MainPage(driver, wait).foreignBooksLink().contains(System.getProperty("test.url") + "/foreignbooks/"));
     }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу best")
     @Test
     public void moveToBestBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).bestBooksLink().contains(ConfClass.getProperty("url") + "/best/"));
+        Assertions.assertTrue(new MainPage(driver, wait).bestBooksLink().contains(System.getProperty("test.url") + "/best/"));
     }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу office")
     @Test
     public void moveToOfficeBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).officeBooksLink().contains(ConfClass.getProperty("url") + "/office/"));
+        Assertions.assertTrue(new MainPage(driver, wait).officeBooksLink().contains(System.getProperty("test.url") + "/office/"));
     }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу school")
     @Test
     public void moveToSchoolBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).schoolBooksLink().contains(ConfClass.getProperty("url") + "/school/"));
+        Assertions.assertTrue(new MainPage(driver, wait).schoolBooksLink().contains(System.getProperty("test.url") + "/school/"));
     }
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу games")
     @Test
     public void moveToGamesBooks() {
-        Assertions.assertTrue(new MainPage(driver, wait).gamesBooksLink().contains(ConfClass.getProperty("url") + "/games/"));
+        Assertions.assertTrue(new MainPage(driver, wait).gamesBooksLink().contains(System.getProperty("test.url") + "/games/"));
     }
 
     @Epic(value = "Корзина")
@@ -71,8 +71,8 @@ public class LabyrinthSite extends BaseClass {
     public void sortByCheap() throws InterruptedException {
         Map<String, String> getBothPrices = new MainPage(driver, wait)
                 .goToSearchPage("Стивен Кинг")
-                        .sortByPriceUp()
-                                .getPriceOfSorted();
+                .sortByPriceUp()
+                .getPriceOfSorted();
         Assertions.assertTrue(Integer.parseInt(getBothPrices.get("firstBookPrice")) <= Integer.parseInt(getBothPrices.get("secBookPrice")));
     }
 
@@ -97,12 +97,7 @@ public class LabyrinthSite extends BaseClass {
                         .preOrderBook()
                         .getTitle();
         Assertions.assertTrue(title.contains("Оформление предзаказа"));
-    }
 
-    @AfterEach
-    public void close() {
-        driver.close();
     }
-
 }
 
