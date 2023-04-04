@@ -24,8 +24,13 @@ public class BaseClass {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
+
+        //Получение ссылки с POM в зависимости от профиля оставил, но можно прописать и в conf
+        //driver.get(ConfClass.getProperty("url"));
+
         driver.get(System.getProperty("test.url"));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='Поиск по Лабиринту']")));
+
     }
 
     @AfterEach

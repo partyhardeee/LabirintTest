@@ -54,13 +54,32 @@
             <id>dev</id>
             <properties>
                 <test.url>https://www.labirint.com</test.url>
+                <env>dev</env>
             </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/dev</directory>
+                    </resource>
+                </resources>
+            </build>
         </profile>
-    <profile>
+        <profile>
             <id>test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <test.url>https://www.labirint.ru</test.url>
+                <env>test</env>
             </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/test</directory>
+                    </resource>
+                </resources>
+            </build>
         </profile>
     </profiles>
     <build>
@@ -73,6 +92,7 @@
                     <systemPropertyVariables>
                         <!--suppress UnresolvedMavenProperty -->
                         <test.url>${test.url}</test.url>
+                        <env>${env}</env>
                     </systemPropertyVariables>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

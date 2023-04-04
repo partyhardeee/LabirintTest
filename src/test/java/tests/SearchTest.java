@@ -14,6 +14,11 @@ public class SearchTest extends BaseClass {
         String searchResult = new MainPage(driver, wait)
                 .goToSearchPage("Остров сокровищ")
                 .getSearchResult();
+        //Получение данных с conf - в зависимости от профиля
+        System.out.println(ConfClass.getProperty("login"));
+        System.out.println(ConfClass.getProperty("password"));
+
+
         Assertions.assertTrue(searchResult.contains("Остров сокровищ"));
     }
 

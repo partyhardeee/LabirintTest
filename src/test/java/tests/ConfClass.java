@@ -10,7 +10,7 @@ public class ConfClass {
 
     static {
         try {
-            fileInputStream = new FileInputStream("src/test/resources/conf.properties");
+            fileInputStream = new FileInputStream(getConfigFilePath());
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
@@ -27,5 +27,11 @@ public class ConfClass {
 
     public static String getProperty(String key) {
         return PROPERTIES.getProperty(key);
+    }
+
+    //Возвращает путь conf в зависимости от профиля
+    public static String getConfigFilePath() {
+        String env = System.getProperty("env");
+        return "src/main/resources/" + env + "/conf.properties";
     }
 }

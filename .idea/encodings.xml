@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/${project.basedir}/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/test/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/develop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/test" charset="UTF-8" />
   </component>
 </project>
