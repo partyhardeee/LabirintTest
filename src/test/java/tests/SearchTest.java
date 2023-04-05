@@ -5,7 +5,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import pages.MainPage;
 
-public class SearchTest extends BaseClass {
+public class SearchTest extends BaseTest {
 
     @Epic(value = "Поиск")
     @Story(value = "Проверка отображения результатов поиска")
@@ -14,9 +14,9 @@ public class SearchTest extends BaseClass {
         String searchResult = new MainPage(driver, wait)
                 .goToSearchPage("Остров сокровищ")
                 .getSearchResult();
-        //Получение данных с conf - в зависимости от профиля
-        System.out.println(ConfClass.getProperty("login"));
-        System.out.println(ConfClass.getProperty("password"));
+//        Получение данных с conf - в зависимости от профиля
+//        System.out.println(ConfClass.getProperty("login"));
+//        System.out.println(ConfClass.getProperty("password"));
 
 
         Assertions.assertTrue(searchResult.contains("Остров сокровищ"));

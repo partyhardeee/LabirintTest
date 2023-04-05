@@ -8,13 +8,17 @@ import pages.MainPage;
 import java.util.Map;
 
 
-public class LabyrinthSite extends BaseClass {
+public class LabyrinthSite extends BaseTest {
 
     @Epic(value = "Переход на страницу")
     @Story(value = "Проверка перехода на страницу books")
     @Test
     public void moveToBooks() {
+//        Получение данных с conf - в зависимости от профиля
+//        System.out.println(ConfClass.getProperty("login"));
+//        System.out.println(ConfClass.getProperty("password"));
         Assertions.assertTrue(new MainPage(driver, wait).booksLink().contains(System.getProperty("test.url") + "/books/"));
+
     }
 
     @Epic(value = "Переход на страницу")

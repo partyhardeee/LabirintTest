@@ -1,4 +1,4 @@
 tests\SearchTest.class
 tests\ConfClass.class
-tests\BaseClass.class
 tests\LabyrinthSite.class
+tests\BaseClass.class
