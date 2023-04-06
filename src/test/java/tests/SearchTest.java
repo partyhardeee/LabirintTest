@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
+import pages.CartPage;
 import pages.MainPage;
 
 public class SearchTest extends BaseTest {
@@ -52,7 +53,9 @@ public class SearchTest extends BaseTest {
                 .clearCart()
                 .restoreBooks()
                 .getBooks();
-        Assertions.assertTrue(restoredBooks.contains("Остров Сокровищ"));
+        softAssertions.assertThat(restoredBooks).contains("Остров Сокровищ");
+        softAssertions.assertThat(new CartPage(driver, wait).restoreBooksButton()).isTrue();
+        softAssertions.assertAll();
     }
 
     @Epic(value = "Поиск")

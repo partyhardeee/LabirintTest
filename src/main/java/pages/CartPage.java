@@ -86,6 +86,10 @@ public class CartPage extends MainPage {
         return this;
     }
 
+    public boolean restoreBooksButton(){
+        return restoreBook.isDisplayed();
+    }
+
     public String getBooks() {
         return booksInCart.getText();
     }
