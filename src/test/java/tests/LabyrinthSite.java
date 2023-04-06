@@ -65,7 +65,9 @@ public class LabyrinthSite extends BaseTest {
                 .addBookToCart()
                 .goToCartPage()
                 .getBothPrices();
-        Assertions.assertEquals(getBothPrices.get("bookPrice"), getBothPrices.get("totalPrice"));
+        softAssertions.assertThat(getBothPrices.get("bookPrice")).isEqualTo(getBothPrices.get("totalPrice"));
+        softAssertions.assertThat(getBothPrices.get("totalWithoutDiscount")).isEqualTo(getBothPrices.get("bookWithoutDiscount"));
+        softAssertions.assertAll();
     }
 
 

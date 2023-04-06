@@ -23,7 +23,7 @@ public class SearchPage extends MainPage {
     @FindBy(xpath = "//div[@data-title]")
     private WebElement result;
 
-    @FindBy(xpath = "//div[@class='product-buy-margin']//a")
+    @FindBy(xpath = "//div[@class='product-buy-margin']//a[@data-position='1']")
     private WebElement addToCart;
 
     @FindBy(xpath = "//div[@data-position='1']//a[@data-tooltip_title='Отложить']//span[@class='header-sprite']")

@@ -37,6 +37,12 @@ public class CartPage extends MainPage {
     @FindBy(xpath = "//a[@data-tooltip_title='Убрать']//span[@class='header-sprite']")
     private WebElement removeFromPutOrder;
 
+    @FindBy(xpath = "//span[@class='price-gray']")
+    private WebElement grayPrice;
+
+    @FindBy(xpath = "//span[@id='basket-default-total-sumprice-nodiscount']")
+    private WebElement totalBasketPrice;
+
 
     public String getBookPrice() {
         return bookPrice.getText().replaceAll(" ", "");
@@ -46,10 +52,21 @@ public class CartPage extends MainPage {
         return totalPrice.getText().replaceAll(" ", "");
     }
 
+    public String getGrayPrice() {
+        return grayPrice.getText().replaceAll(" ", "");
+    }
+
+    public String getTotalBasketPrice() {
+        return totalBasketPrice.getText().replaceAll(" ", "");
+    }
+
     public Map<String, String> getBothPrices() {
         Map<String, String> bothPrices = new HashMap<>();
         bothPrices.put("bookPrice", getBookPrice());
         bothPrices.put("totalPrice", getTotalPrice());
+        bothPrices.put("totalWithoutDiscount", getTotalBasketPrice());
+        bothPrices.put("bookWithoutDiscount", getGrayPrice());
+
         return bothPrices;
     }
 
