@@ -4,6 +4,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import pages.MainPage;
+import pages.PreOrderPage;
 
 import java.util.Map;
 
@@ -102,7 +103,11 @@ public class LabyrinthSite extends BaseTest {
                         .toPreorderBooks()
                         .preOrderBook()
                         .getTitle();
-        Assertions.assertTrue(title.contains("Оформление предзаказа"));
+        new PreOrderPage(driver, wait).fillTheName("Никита").fillSurname("Данилов");
+        softAssertions.assertThat(new PreOrderPage(driver, wait).getPlacesToFill().contains("Имя")).isFalse();
+        softAssertions.assertThat(new PreOrderPage(driver, wait).getPlacesToFill().contains("Фамилия")).isFalse();
+        softAssertions.assertThat(title).contains("Оформление предзаказа");
+        softAssertions.assertAll();
 
     }
 }

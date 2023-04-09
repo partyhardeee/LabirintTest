@@ -21,6 +21,15 @@ public class PreOrderPage extends MainPage {
     @FindBy(xpath = "//div[@class='product-buy-margin']//a[@data-position='1']")
     private WebElement preOrderBook;
 
+    @FindBy(xpath = "//div[@class='pt20 pb20 text-s v-color--greyer text-xs']")
+    private WebElement placesToFill;
+
+    @FindBy(xpath = "//input[@placeholder='Имя']")
+    private WebElement nameInput;
+
+    @FindBy(xpath = "//input[@placeholder='Фамилия']")
+    private WebElement surnameInput;
+
 
     @Step("Предзаказать книгу")
     public PreOrderPage preOrderBook() {
@@ -30,6 +39,20 @@ public class PreOrderPage extends MainPage {
 
     public String getTitle() {
         return title.getText();
+    }
+
+    public String getPlacesToFill(){
+        return placesToFill.getText();
+    }
+
+    public PreOrderPage fillTheName(String name){
+        nameInput.sendKeys(name);
+        return this;
+    }
+
+    public PreOrderPage fillSurname(String surname){
+        surnameInput.sendKeys(surname);
+        return this;
     }
 
 }
