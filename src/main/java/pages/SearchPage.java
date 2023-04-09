@@ -89,6 +89,10 @@ public class SearchPage extends MainPage {
         return this;
     }
 
+    public String putOrderAmount(){
+        return driver.findElement(By.xpath("//span[@class='cabinet-menu__counter']")).getText();
+    }
+
     @Step("Отображение текста, если нет результатов")
     public boolean isErrorDisplayed() {
         return searchError.isDisplayed();

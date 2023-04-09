@@ -5,6 +5,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import pages.CartPage;
 import pages.MainPage;
+import pages.SearchPage;
 
 public class SearchTest extends BaseTest {
 
@@ -77,6 +78,9 @@ public class SearchTest extends BaseTest {
                         .goToSearchPage("Война и мир")
                         .putOrderBook()
                         .toPutOrder().isBookPutOrdered();
-        Assertions.assertTrue(isBookPuOrdered);
+
+        softAssertions.assertThat(isBookPuOrdered).isTrue();
+        softAssertions.assertThat(new SearchPage(driver, wait).putOrderAmount()).isEqualTo("1");
+        softAssertions.assertAll();
     }
 }
